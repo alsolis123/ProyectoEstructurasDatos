@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
 import controlador.Main;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,7 +16,16 @@ public class Configurar extends javax.swing.JFrame {
      * Creates new form Configurar
      */
     public Configurar() {
+     
         initComponents();
+        /*BG transparente*/
+        /*text_modelo.setBackground(new java.awt.Color(0,0,0,1));
+       text_pasajeros.setBackground(new java.awt.Color(0,0,0,1));
+       text_sobrecargo.setBackground(new java.awt.Color(0,0,0,1));
+       text_piloto.setBackground(new java.awt.Color(0,0,0,1));
+         */
+        setBounds(800, 300, 473, 537);
+        setResizable(false);
     }
 
     /**
@@ -35,108 +41,71 @@ public class Configurar extends javax.swing.JFrame {
         text_modelo = new javax.swing.JTextField();
         text_pasajeros = new javax.swing.JTextField();
         text_sobrecargo = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         text_piloto = new javax.swing.JTextField();
         btn_ingresar = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        text_modelo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
+        text_modelo.setBorder(null);
         text_modelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_modeloActionPerformed(evt);
             }
         });
+        jPanel1.add(text_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 200, 30));
 
-        jLabel1.setText("Modelo");
+        text_pasajeros.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
+        text_pasajeros.setBorder(null);
+        jPanel1.add(text_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 200, 30));
 
-        jLabel2.setText("Cantidad de Pasajeros");
+        text_sobrecargo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
+        text_sobrecargo.setBorder(null);
+        text_sobrecargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_sobrecargoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(text_sobrecargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 200, 30));
 
-        jLabel3.setText("Cantidad de Sobrecargos");
+        text_piloto.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
+        text_piloto.setBorder(null);
+        jPanel1.add(text_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 200, 30));
 
-        jLabel4.setText("Nombre Piloto");
-
-        btn_ingresar.setText("Ingresar");
+        btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_Agregar.png"))); // NOI18N
+        btn_ingresar.setOpaque(false);
         btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ingresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 110, 50));
 
-        btn_atras.setText("Atras");
+        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
+        btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 130, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_atras)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_ingresar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(text_pasajeros, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                            .addComponent(text_modelo)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(text_piloto)
-                            .addComponent(text_sobrecargo))))
-                .addGap(104, 104, 104))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(text_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(text_pasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(text_sobrecargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(text_piloto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_ingresar)
-                    .addComponent(btn_atras))
-                .addGap(38, 38, 38))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Configurar.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 480, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -154,6 +123,10 @@ public class Configurar extends javax.swing.JFrame {
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
         Main.configurar_Inicio();    
     }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void text_sobrecargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_sobrecargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_sobrecargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,10 +206,7 @@ public class Configurar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_ingresar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField text_modelo;
     private javax.swing.JTextField text_pasajeros;

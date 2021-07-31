@@ -35,77 +35,61 @@ public class Principal extends javax.swing.JFrame {
         btn_hangar = new javax.swing.JButton();
         btn_despegue = new javax.swing.JButton();
         btn_aterrizaje = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_envuelo.setText("Aviones en vuelo");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_envuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_vuelo.png"))); // NOI18N
+        btn_envuelo.setOpaque(false);
         btn_envuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_envueloActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_envuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 210, 60));
 
-        btn_hangar.setText("Aviones en Hangar");
+        btn_hangar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_hangar.png"))); // NOI18N
+        btn_hangar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_hangar.setOpaque(false);
         btn_hangar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_hangarActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_hangar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 210, 60));
 
-        btn_despegue.setText("Pista de Despegue");
+        btn_despegue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegue.png"))); // NOI18N
+        btn_despegue.setOpaque(false);
         btn_despegue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_despegueActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 210, 60));
 
-        btn_aterrizaje.setText("Pista de Aterrizaje");
+        btn_aterrizaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_aterrizaje.png"))); // NOI18N
+        btn_aterrizaje.setOpaque(false);
         btn_aterrizaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_aterrizajeActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_aterrizaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 210, 60));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_despegue)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addComponent(btn_aterrizaje))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_envuelo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_hangar)))
-                .addGap(44, 44, 44))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_envuelo)
-                    .addComponent(btn_hangar))
-                .addGap(87, 87, 87)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_despegue)
-                    .addComponent(btn_aterrizaje))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Principal.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 941, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -167,6 +151,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_despegue;
     private javax.swing.JButton btn_envuelo;
     private javax.swing.JButton btn_hangar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
