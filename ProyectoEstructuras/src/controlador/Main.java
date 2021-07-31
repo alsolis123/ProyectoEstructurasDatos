@@ -34,7 +34,7 @@ public class Main {
     public static void configurar_Inicio(){
         
         if(aviones.contador_Inicio() < 25){
-            aviones.insertarPila1(configurar.getText_modelo(), Integer.parseInt(configurar.getText_pasajeros()), Integer.parseInt(configurar.getText_sobrecargo()), configurar.getText_piloto());
+            aviones.insertarFila1(configurar.getText_modelo(), Integer.parseInt(configurar.getText_pasajeros()), Integer.parseInt(configurar.getText_sobrecargo()), configurar.getText_piloto());
         }else {
             JOptionPane.showMessageDialog(null, "No se puede ingresar mas de 25 aviones al inicio");
         }
