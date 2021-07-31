@@ -2,9 +2,9 @@
 package controlador;
 
 public class Nodo {
-    public int cantidad_pasajeros;
-    public int cantidad_sobrecargos;
+    public int pasajeros;
+    public int sobrecargos;
     public String piloto;
-    public String avion;
+    public String modelo;
     public Nodo siguiente;
 }

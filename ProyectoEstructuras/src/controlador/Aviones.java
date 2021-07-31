@@ -3,32 +3,29 @@ package controlador;
 
 
 public class Aviones {
-    private Nodo pilaInicio;
     
+    private Nodo[] pilas = new Nodo[5];
+    
+//    Nodo 1 es al inicio
     
     public Aviones(){
-        pilaInicio = null;
+        for (int i = 0; i < pilas.length; i++) {
+            pilas[i] = null;
+        }
     }
     
-    public void inicioAplicacion(){
-        
-//        Esto da un numero aleatorio entre 10 y 25
-        int aleatorio = (int)Math.floor(Math.random()*(25-10+1)+10);
-        for (int i = 0; i <= aleatorio-1; i++) {
-            String nombre = "Avion"+(i+1);
-            insertarFinal(nombre);
-        }
-        
-    }
-    public void insertarFinal(String avion){
+    public void insertarPila1(String modelo, int pasajeros, int sobrecargos, String piloto){
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
-        nuevo.avion = avion;
+        nuevo.modelo = modelo;
+        nuevo.pasajeros = pasajeros;
+        nuevo.sobrecargos = sobrecargos;
+        nuevo.piloto = piloto;
         
-        if(pilaInicio == null){
-            pilaInicio = nuevo;
+        if(pilas[1] == null){
+            pilas[1] = nuevo;
         }else{
-            Nodo aux = pilaInicio;
+            Nodo aux = pilas[1];
 
             while(aux.siguiente != null){
                 aux = aux.siguiente;
@@ -38,11 +35,18 @@ public class Aviones {
     }
     
     
-    public void imprimir(){
-        for (Nodo aux = pilaInicio; aux != null;aux = aux.siguiente) {
-            System.out.println(aux.avion);
+    public int contador_Inicio(){
+        int contador = 0;
+        for (Nodo aux = pilas[1]; aux != null;aux = aux.siguiente) {
+            contador++;
         }
+        System.out.println(contador);
+        
+        return contador;
     }
     
-    
+    public void distribuirAviones(){
+        
+    }
+
 }
