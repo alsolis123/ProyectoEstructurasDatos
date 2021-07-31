@@ -28,6 +28,7 @@ public class Main {
     
     public static void main(String[] args) {
         mostrar_Inicio();
+        aviones.insertar_enVuelo();
     }
     
 //    Logica Inicio

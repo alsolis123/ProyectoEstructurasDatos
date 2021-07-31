@@ -26,6 +26,7 @@ public class Configurar extends javax.swing.JFrame {
          */
         setBounds(800, 300, 473, 537);
         setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
