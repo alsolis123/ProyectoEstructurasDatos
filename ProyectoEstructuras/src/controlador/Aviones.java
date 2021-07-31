@@ -14,7 +14,7 @@ public class Aviones {
         }
     }
     
-    public void insertarPila1(String modelo, int pasajeros, int sobrecargos, String piloto){
+    public void insertarFila1(String modelo, int pasajeros, int sobrecargos, String piloto){
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
         nuevo.modelo = modelo;
