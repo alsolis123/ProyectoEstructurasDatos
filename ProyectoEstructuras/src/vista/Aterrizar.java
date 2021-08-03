@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Main;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,7 +37,7 @@ public class Aterrizar extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_aterrizaje = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btn_atras = new javax.swing.JButton();
 
@@ -48,7 +50,7 @@ public class Aterrizar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_aterrizaje.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -56,7 +58,7 @@ public class Aterrizar extends javax.swing.JFrame {
                 "N Piloto", "Modelo Avion", "Cantidad Pasajeros", "Cantidad Sobrecargos"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_aterrizaje);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aterrizaje.png"))); // NOI18N
 
@@ -133,6 +135,21 @@ public class Aterrizar extends javax.swing.JFrame {
         });
     }
 
+    public DefaultTableModel getTbl_aterrizar() {
+        DefaultTableModel modelo = (DefaultTableModel)tbl_aterrizaje.getModel();
+        return modelo;
+    }
+
+    public void setTbl_aterrizar(DefaultTableModel modelo) {
+        this.tbl_aterrizaje.setModel(modelo);
+    }
+    
+    
+    
+    
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
     private javax.swing.JLabel jLabel1;
@@ -141,6 +158,6 @@ public class Aterrizar extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_aterrizaje;
     // End of variables declaration//GEN-END:variables
 }

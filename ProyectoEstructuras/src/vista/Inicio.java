@@ -77,6 +77,7 @@ public class Inicio extends javax.swing.JFrame {
             Main.mostrar_Principal();
             Main.ocultar_Inicio();
             Main.distribuirAviones();
+            Main.actualizarTablas();
         }else{
             JOptionPane.showMessageDialog(null, "Debe tener al menos 10 aviones ingresados");
         }

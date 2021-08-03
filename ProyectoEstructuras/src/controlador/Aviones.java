@@ -1,12 +1,16 @@
 
 package controlador;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 
 public class Aviones {
     
     private Nodo[] listas = new Nodo[5];
     
-//    Nodo 1 es al inicio
+//    Nodo 0 es al inicio
+//    Nodo 1 - enVuelo, Nodo 2 - En pista, Nodo 3 - Despegue, Nodo 4 - Hangar
     
     public Aviones(){
         for (int i = 0; i < listas.length; i++) {
@@ -47,8 +51,7 @@ public class Aviones {
     
     public void distribuirAviones(){
         for (Nodo aux = listas[0]; aux != null; aux = aux.siguiente) {
-//            int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
-            int aleatorio = 1;
+            int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
             insertarlistasAleatorio(aux.modelo, aux.pasajeros, aux.sobrecargos, aux.piloto, aleatorio);
         }
     }
@@ -91,5 +94,23 @@ public class Aviones {
             aux = aux.siguiente;
         }
     }
+    public DefaultTableModel llenarTablas(DefaultTableModel modelo, int lista){
+        Object[]columna = new Object[4];
+        Nodo aux = listas[lista];
+        
+        while(aux!=null){
+            columna[0] = aux.piloto;
+            columna[1] = aux.modelo;
+            columna[2] = aux.pasajeros;
+            columna[3] = aux.sobrecargos;
+            modelo.addRow(columna);
+            aux = aux.siguiente;
+        }
+        return modelo;
+    }
+    public void vaciarTablas(JTable tabla){
+        
+    }
+    
 
 }

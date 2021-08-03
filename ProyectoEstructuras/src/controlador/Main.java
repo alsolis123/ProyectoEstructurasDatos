@@ -2,6 +2,7 @@
 package controlador;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import vista.Aterrizar;
 import vista.Configurar;
 import vista.Despegue;
@@ -40,8 +41,16 @@ public class Main {
         }
     }
     
-    public static void llenarTablas(){
+    public static void actualizarTablas(){
+        DefaultTableModel modelo_vuelo = vuelo.getTbl_vuelo();
+        DefaultTableModel modelo_aterrizar = aterrizar.getTbl_aterrizar();
+        DefaultTableModel modelo_despegue = despegue.getTbl_despegue();
+        DefaultTableModel modelo_hangar = hangar.getTbl_hangar();
         
+        vuelo.setTbl_vuelo(aviones.llenarTablas(modelo_vuelo, 1));
+        aterrizar.setTbl_aterrizar(aviones.llenarTablas(modelo_aterrizar, 2));
+        despegue.setTbl_despegue(aviones.llenarTablas(modelo_despegue, 3));
+        hangar.setTbl_hangar(aviones.llenarTablas(modelo_hangar, 4));
     }
     
     public static int contador_Inicio(){

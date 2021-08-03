@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Main;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,7 +36,7 @@ public class Vuelo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_atras = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_vuelo = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +53,7 @@ public class Vuelo extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_vuelo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -59,7 +61,7 @@ public class Vuelo extends javax.swing.JFrame {
                 "N Piloto", "Modelo Avion", "Cantidad Pasajeros", "Cantidad Sobrecargos"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_vuelo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,12 +131,21 @@ public class Vuelo extends javax.swing.JFrame {
             }
         });
     }
+    public DefaultTableModel getTbl_vuelo() {
+        DefaultTableModel modelo = (DefaultTableModel)tbl_vuelo.getModel();
+        return modelo;
+    }
+
+    public void setTbl_vuelo(DefaultTableModel modelo) {
+        this.tbl_vuelo.setModel(modelo);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_vuelo;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Main;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,7 +34,7 @@ public class Hangar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_hangar = new javax.swing.JTable();
         btn_atras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -40,7 +42,7 @@ public class Hangar extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_hangar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -48,7 +50,7 @@ public class Hangar extends javax.swing.JFrame {
                 "N Piloto", "Modelo Avion", "Cantidad Pasajeros", "Cantidad Sobrecargos"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_hangar);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 600, 200));
 
@@ -120,12 +122,21 @@ public class Hangar extends javax.swing.JFrame {
             }
         });
     }
+    public DefaultTableModel getTbl_hangar() {
+        DefaultTableModel modelo = (DefaultTableModel)tbl_hangar.getModel();
+        return modelo;
+    }
+
+    public void setTbl_hangar(DefaultTableModel modelo) {
+        this.tbl_hangar.setModel(modelo);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_hangar;
     // End of variables declaration//GEN-END:variables
 }

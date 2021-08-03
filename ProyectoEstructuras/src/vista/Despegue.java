@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Main;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,7 +34,7 @@ public class Despegue extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbl_despegue = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btn_atras = new javax.swing.JButton();
 
@@ -40,7 +42,7 @@ public class Despegue extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_despegue.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -48,7 +50,7 @@ public class Despegue extends javax.swing.JFrame {
                 "N Piloto", "Modelo Avion", "Cantidad Pasajeros", "Cantidad Sobrecargos"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbl_despegue);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 600, 250));
 
@@ -125,12 +127,22 @@ public class Despegue extends javax.swing.JFrame {
             }
         });
     }
+    public DefaultTableModel getTbl_despegue() {
+        DefaultTableModel modelo = (DefaultTableModel)tbl_despegue.getModel();
+        return modelo;
+    }
 
+    public void setTbl_despegue(DefaultTableModel modelo) {
+        this.tbl_despegue.setModel(modelo);
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbl_despegue;
     // End of variables declaration//GEN-END:variables
 }
