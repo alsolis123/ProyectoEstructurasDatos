@@ -22,10 +22,10 @@ public class Aviones {
         nuevo.sobrecargos = sobrecargos;
         nuevo.piloto = piloto;
         
-        if(listas[1] == null){
-            listas[1] = nuevo;
+        if(listas[0] == null){
+            listas[0] = nuevo;
         }else{
-            Nodo aux = listas[1];
+            Nodo aux = listas[0];
 
             while(aux.siguiente != null){
                 aux = aux.siguiente;
@@ -37,7 +37,7 @@ public class Aviones {
     
     public int contador_Inicio(){
         int contador = 0;
-        for (Nodo aux = listas[1]; aux != null;aux = aux.siguiente) {
+        for (Nodo aux = listas[0]; aux != null;aux = aux.siguiente) {
             contador++;
         }
         System.out.println(contador);
@@ -46,11 +46,13 @@ public class Aviones {
     }
     
     public void distribuirAviones(){
-        for (Nodo aux = listas[1]; aux != null; aux = aux.siguiente) {
-            int aleatorio = (int) (Math.random() * (5 + 1 - 2)) + 2;
+        for (Nodo aux = listas[0]; aux != null; aux = aux.siguiente) {
+//            int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
+            int aleatorio = 1;
             insertarlistasAleatorio(aux.modelo, aux.pasajeros, aux.sobrecargos, aux.piloto, aleatorio);
         }
     }
+    @SuppressWarnings("empty-statement")
     private void insertarlistasAleatorio(String modelo, int pasajeros, int sobrecargos, String piloto, int lista){
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
@@ -61,20 +63,33 @@ public class Aviones {
         
         if(listas[lista] == null){
             listas[lista] = nuevo;
-        }else if(lista != 2){
+        }else if(lista != 1){
             nuevo.siguiente = listas[lista];
             listas[lista] = nuevo;
         }else{
-//            Aca se debe de agregar para los aviones en vuelo esto en es orden alfabetico
-        }
             
+            if (listas[lista].piloto.compareTo(piloto) > 0 ){
+                nuevo.siguiente = listas[lista];
+                listas[lista] = nuevo;
+            }else{
+                Nodo aux = listas[lista];
+                
+                while (aux.siguiente != null && aux.siguiente.piloto.compareTo(piloto) <= 0){
+                    aux = aux.siguiente;
+                   
+                }
+                nuevo.siguiente = aux.siguiente;
+                aux.siguiente = nuevo;
+            }    
+        }
+         
     }
-    public void insertar_enVuelo(){
-        String palabra1 = "Alberto";
-        String palabra2 = "Arberto";
-        int comparacion =  palabra1.compareTo(palabra2);
-        System.out.println(comparacion);
-//        ver notas aqui hay que ordenar por alfabeto
+    public void imprimirlista2(){
+        for (Nodo aux = listas[1]; aux!= null; ) {
+            System.out.print(aux.piloto);
+            System.out.println(" ");
+            aux = aux.siguiente;
+        }
     }
 
 }

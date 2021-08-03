@@ -28,7 +28,6 @@ public class Main {
     
     public static void main(String[] args) {
         mostrar_Inicio();
-        aviones.insertar_enVuelo();
     }
     
 //    Logica Inicio
@@ -40,11 +39,19 @@ public class Main {
             JOptionPane.showMessageDialog(null, "No se puede ingresar mas de 25 aviones al inicio");
         }
     }
+    
+    public static void llenarTablas(){
+        
+    }
+    
     public static int contador_Inicio(){
         return aviones.contador_Inicio();
     }
 
-    
+    public static void distribuirAviones(){
+        aviones.distribuirAviones();
+        aviones.imprimirlista2();
+    }
     
     
 //    Abrir y cerrar ventanas
