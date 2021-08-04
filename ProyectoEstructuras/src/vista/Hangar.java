@@ -68,6 +68,11 @@ public class Hangar extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 550, 60));
 
         btn_despegue.setText("Pista de Despegue");
+        btn_despegue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_despegueActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,6 +96,10 @@ public class Hangar extends javax.swing.JFrame {
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         Main.ocultar_Hangar();
     }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void btn_despegueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_despegueActionPerformed
+        Main.logicaHangar();
+    }//GEN-LAST:event_btn_despegueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,6 +142,9 @@ public class Hangar extends javax.swing.JFrame {
 
     public void setTbl_hangar(DefaultTableModel modelo) {
         this.tbl_hangar.setModel(modelo);
+    }
+    public JTable getTable(){
+        return this.tbl_hangar;
     }
     
 

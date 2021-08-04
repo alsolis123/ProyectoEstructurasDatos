@@ -2,6 +2,7 @@
 package controlador;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import vista.Aterrizar;
 import vista.Configurar;
@@ -62,6 +63,36 @@ public class Main {
     public static void distribuirAviones(){
         aviones.distribuirAviones();
         aviones.imprimirlista2();
+    }
+    
+//    Logica tablas
+    
+    public static void logicaVuelo(){
+        
+        int fila = vuelo.getFilaTable();
+        
+        if(fila == -1){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un valor de la lista");
+        }else{
+            aviones.logicaTablas(vuelo.getTable(), fila, 1);
+            actualizarTablas();
+        }
+    }
+    public static void logicaAterrizaje(){
+//        Se va de la pista de aterrizaje al hangar
+        aviones.logicaTablas(aterrizar.getTable(), 0, 2);
+        actualizarTablas();
+    }
+    
+    public static void logicaDespegue(){
+//        Este va de pista de despegue a vuelo
+        aviones.logicaTablas(despegue.getTable(), 0, 3);
+        actualizarTablas();
+    }
+    public static void logicaHangar(){
+        int fila = hangar.getTable().getRowCount() - 1;
+        aviones.logicaTablas(hangar.getTable(), fila, 4);
+        actualizarTablas();
     }
     
 //    Logica boton incluir principal

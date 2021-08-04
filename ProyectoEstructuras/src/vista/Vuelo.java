@@ -65,6 +65,11 @@ public class Vuelo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbl_vuelo);
 
         btn_aterrizar.setText("Aterrizar");
+        btn_aterrizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_aterrizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,6 +108,10 @@ public class Vuelo extends javax.swing.JFrame {
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         Main.ocultar_Vuelo();
     }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void btn_aterrizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aterrizarActionPerformed
+        Main.logicaVuelo();
+    }//GEN-LAST:event_btn_aterrizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +155,13 @@ public class Vuelo extends javax.swing.JFrame {
     public void setTbl_vuelo(DefaultTableModel modelo) {
         this.tbl_vuelo.setModel(modelo);
     }
+    public int getFilaTable(){
+        return this.tbl_vuelo.getSelectedRow();
+    }
     
+    public JTable getTable(){
+        return this.tbl_vuelo;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_aterrizar;

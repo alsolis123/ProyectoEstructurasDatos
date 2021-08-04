@@ -59,6 +59,11 @@ public class Despegue extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 60));
 
         btn_vuelo.setText("Despegar/En Vuelo");
+        btn_vuelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_vueloActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
 
         btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
@@ -96,6 +101,10 @@ public class Despegue extends javax.swing.JFrame {
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         Main.ocultar_Despegue();
     }//GEN-LAST:event_btn_atrasActionPerformed
+
+    private void btn_vueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_vueloActionPerformed
+        Main.logicaDespegue();
+    }//GEN-LAST:event_btn_vueloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,6 +149,9 @@ public class Despegue extends javax.swing.JFrame {
         this.tbl_despegue.setModel(modelo);
     }
     
+    public JTable getTable(){
+        return this.tbl_despegue;
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

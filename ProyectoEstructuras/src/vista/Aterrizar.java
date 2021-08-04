@@ -64,6 +64,11 @@ public class Aterrizar extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aterrizaje.png"))); // NOI18N
 
         btn_hangar.setText("Hangar");
+        btn_hangar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hangarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,6 +115,10 @@ public class Aterrizar extends javax.swing.JFrame {
         Main.ocultar_Aterrizar();
     }//GEN-LAST:event_btn_atrasActionPerformed
 
+    private void btn_hangarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hangarActionPerformed
+        Main.logicaAterrizaje();
+    }//GEN-LAST:event_btn_hangarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -154,7 +163,9 @@ public class Aterrizar extends javax.swing.JFrame {
         this.tbl_aterrizaje.setModel(modelo);
     }
     
-    
+    public JTable getTable(){
+        return this.tbl_aterrizaje;
+    }
     
     
     

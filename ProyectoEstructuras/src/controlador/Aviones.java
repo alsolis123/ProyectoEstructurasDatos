@@ -11,7 +11,7 @@ public class Aviones {
     private Nodo[] listas = new Nodo[5];
     
 //    Nodo 0 es al inicio
-//    Nodo 1 - enVuelo, Nodo 2 - En pista, Nodo 3 - Despegue, Nodo 4 - Hangar
+//    Nodo 1 - enVuelo, Nodo 2 - En pista Aterrizaje, Nodo 3 - Despegue, Nodo 4 - Hangar
     
     public Aviones(){
         for (int i = 0; i < listas.length; i++) {
@@ -34,7 +34,8 @@ public class Aviones {
     }
     
     
-    public void insertarFila1(String modelo, int pasajeros, int sobrecargos, String piloto){
+    public boolean insertarFila1(String modelo, int pasajeros, int sobrecargos, String piloto){
+        boolean condicion = false;
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
         nuevo.modelo = modelo;
@@ -43,9 +44,10 @@ public class Aviones {
         nuevo.piloto = piloto;
         
         if(validarPiloto(piloto)==false){
-                
+            condicion = true;    
             if(listas[0] == null){
                 listas[0] = nuevo;
+                
             }else{
                 Nodo aux = listas[0];
 
@@ -57,6 +59,7 @@ public class Aviones {
         }else{
             JOptionPane.showMessageDialog(null, "Este piloto ya fue ingresado");
         }
+        return condicion;
     }
     
     
@@ -78,6 +81,7 @@ public class Aviones {
     }
     @SuppressWarnings("empty-statement")
     private void insertarlistasAleatorio(String modelo, int pasajeros, int sobrecargos, String piloto, int lista){
+        
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
         nuevo.modelo = modelo;
@@ -141,20 +145,104 @@ public class Aviones {
     // Logica incluir
     
     public void incluirAvion(String modelo, int pasajeros, int sobrecargos, String piloto, String lista){
-        if(lista.equals("Aleatorio")){
-            int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
-            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, aleatorio);
-        }else if(lista.equals("Aviones en Vuelo")){
-            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 1);
-        }else if(lista.equals("Aviones en Hangar")){
-            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 4);
-        }else if(lista.equals("Pista de Despegue")){
-            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 3);
-        }else{
-            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 2);
+        if(insertarFila1(modelo, pasajeros, sobrecargos, piloto)== true){
+            if(lista.equals("Aleatorio")){
+                int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
+                insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, aleatorio);
+            }else if(lista.equals("Aviones en Vuelo")){
+                insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 1);
+            }else if(lista.equals("Aviones en Hangar")){
+                insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 4);
+            }else if(lista.equals("Pista de Despegue")){
+                insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 3);
+            }else{
+                insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 2);
+            }
         }
     }
     
+    //Logica vuelo
     
+    public void logicaTablas(JTable tabla, int fila, int lista){
+        try{
+            String piloto = (String) tabla.getValueAt(fila, 0);
+            String modelo = (String) tabla.getValueAt(fila, 1);
+            int pasajeros = (int) tabla.getValueAt(fila, 2);
+            int sobrecargos = (int) tabla.getValueAt(fila, 3);
 
+            if (lista == 1){
+                Vuelo(modelo, pasajeros, sobrecargos, piloto);
+            }else if(lista == 2){
+                Aterrizaje(modelo, pasajeros, sobrecargos, piloto);
+            }else if(lista == 3){
+                Despegue(modelo, pasajeros, sobrecargos, piloto);
+            }else{
+                Hangar(modelo, pasajeros, sobrecargos, piloto);
+            }
+        }catch(ArrayIndexOutOfBoundsException e){
+            JOptionPane.showMessageDialog(null, "No hay aviones en esta area");
+        }
+    }
+    
+    public void Vuelo(String modelo, int pasajeros, int sobrecargos, String piloto){
+        insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 2);
+        borrarVuelo(piloto);
+    }
+    public void borrarVuelo(String piloto){
+        
+        
+        if (listas[1].piloto.equals(piloto)){
+            if(listas[1].siguiente == null){
+                listas[1] = null;
+            }else{
+                listas[1] = listas[1].siguiente;
+            }
+        }else{
+            Nodo aux = listas[1];
+            while(aux.siguiente.piloto != piloto && aux.siguiente != null){
+                aux = aux.siguiente;
+            }
+            aux.siguiente = aux.siguiente.siguiente;
+        }
+    }
+    //Logica aterrizaje
+    public void Aterrizaje(String modelo, int pasajeros, int sobrecargos, String piloto){
+//        Se debe de insertar en el hangar
+        insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 4);
+        borrarAterrizaje_o_Despegue(2);
+    }
+    public void borrarAterrizaje_o_Despegue(int lista){
+        if(listas[lista] == null){
+            JOptionPane.showMessageDialog(null, "No hay aviones en esta area");
+        }else if (listas[lista].siguiente == null){
+            listas[lista] = null;
+        }else{
+            listas[lista] = listas[lista].siguiente;
+        }
+    }
+    
+//    Logica Despegue
+    public void Despegue(String modelo, int pasajeros, int sobrecargos, String piloto){
+        insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 1);
+        borrarAterrizaje_o_Despegue(3);
+    }
+//    Logica hangar
+    public void Hangar(String modelo, int pasajeros, int sobrecargos, String piloto){
+        insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 3);
+        borrarHangar();
+    }
+    public void borrarHangar(){
+        
+        if(listas[4].siguiente == null){
+            listas[4] = null;
+        }else{
+            Nodo aux = listas[4];
+            while(aux.siguiente.siguiente != null){
+                aux = aux.siguiente;
+            }
+            aux.siguiente = null;  
+        }
+        
+        
+    }
 }
