@@ -37,6 +37,7 @@ public class Hangar extends javax.swing.JFrame {
         tbl_hangar = new javax.swing.JTable();
         btn_atras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btn_despegue = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,7 +53,7 @@ public class Hangar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_hangar);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 600, 200));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 600, 170));
 
         btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
         btn_atras.setBorder(null);
@@ -65,6 +66,9 @@ public class Hangar extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AvionesHangar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 550, 60));
+
+        btn_despegue.setText("Pista de Despegue");
+        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,6 +138,7 @@ public class Hangar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_despegue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

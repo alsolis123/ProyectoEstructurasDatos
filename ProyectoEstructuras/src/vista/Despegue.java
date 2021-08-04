@@ -36,6 +36,7 @@ public class Despegue extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_despegue = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        btn_vuelo = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,10 +53,13 @@ public class Despegue extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_despegue);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 600, 250));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 600, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PistaDespegue.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 60));
+
+        btn_vuelo.setText("Despegar/En Vuelo");
+        jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
 
         btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
         btn_atras.setBorder(null);
@@ -140,6 +144,7 @@ public class Despegue extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_atras;
+    private javax.swing.JButton btn_vuelo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

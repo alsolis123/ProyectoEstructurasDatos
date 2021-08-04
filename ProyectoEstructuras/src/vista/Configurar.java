@@ -53,6 +53,7 @@ public class Configurar extends javax.swing.JFrame {
 
         text_modelo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_modelo.setBorder(null);
+        text_modelo.setOpaque(false);
         text_modelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_modeloActionPerformed(evt);
@@ -62,10 +63,12 @@ public class Configurar extends javax.swing.JFrame {
 
         text_pasajeros.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_pasajeros.setBorder(null);
+        text_pasajeros.setOpaque(false);
         jPanel1.add(text_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 200, 30));
 
         text_sobrecargo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_sobrecargo.setBorder(null);
+        text_sobrecargo.setOpaque(false);
         text_sobrecargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_sobrecargoActionPerformed(evt);
@@ -75,6 +78,7 @@ public class Configurar extends javax.swing.JFrame {
 
         text_piloto.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_piloto.setBorder(null);
+        text_piloto.setOpaque(false);
         jPanel1.add(text_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 200, 30));
 
         btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_Agregar.png"))); // NOI18N

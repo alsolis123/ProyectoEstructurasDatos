@@ -1,6 +1,7 @@
 
 package controlador;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,6 +19,21 @@ public class Aviones {
         }
     }
     
+    public boolean validarPiloto(String piloto){
+        Nodo aux = listas[0];
+        boolean condicion = false;
+        
+        
+        while(aux!=null){
+            if(aux.piloto.equals(piloto)){
+                condicion = true;
+            }
+            aux = aux.siguiente;
+        }
+        return condicion;
+    }
+    
+    
     public void insertarFila1(String modelo, int pasajeros, int sobrecargos, String piloto){
         Nodo nuevo = new Nodo();
         nuevo.siguiente = null;
@@ -26,16 +42,21 @@ public class Aviones {
         nuevo.sobrecargos = sobrecargos;
         nuevo.piloto = piloto;
         
-        if(listas[0] == null){
-            listas[0] = nuevo;
-        }else{
-            Nodo aux = listas[0];
+        if(validarPiloto(piloto)==false){
+                
+            if(listas[0] == null){
+                listas[0] = nuevo;
+            }else{
+                Nodo aux = listas[0];
 
-            while(aux.siguiente != null){
-                aux = aux.siguiente;
+                while(aux.siguiente != null){
+                    aux = aux.siguiente;
+                }
+                aux.siguiente = nuevo;
             }
-            aux.siguiente = nuevo;
-        }   
+        }else{
+            JOptionPane.showMessageDialog(null, "Este piloto ya fue ingresado");
+        }
     }
     
     
@@ -67,8 +88,13 @@ public class Aviones {
         if(listas[lista] == null){
             listas[lista] = nuevo;
         }else if(lista != 1){
-            nuevo.siguiente = listas[lista];
-            listas[lista] = nuevo;
+//            Se inserta al final
+            Nodo aux = listas[lista];
+            while(aux.siguiente != null){
+                aux = aux.siguiente;
+            }
+            aux.siguiente = nuevo;
+            
         }else{
             
             if (listas[lista].piloto.compareTo(piloto) > 0 ){
@@ -97,6 +123,7 @@ public class Aviones {
     public DefaultTableModel llenarTablas(DefaultTableModel modelo, int lista){
         Object[]columna = new Object[4];
         Nodo aux = listas[lista];
+        modelo.setNumRows(0);
         
         while(aux!=null){
             columna[0] = aux.piloto;
@@ -108,9 +135,26 @@ public class Aviones {
         }
         return modelo;
     }
-    public void vaciarTablas(JTable tabla){
-        
+    
+    
+    
+    // Logica incluir
+    
+    public void incluirAvion(String modelo, int pasajeros, int sobrecargos, String piloto, String lista){
+        if(lista.equals("Aleatorio")){
+            int aleatorio = (int) (Math.random() * (4 + 1 - 1)) + 1;
+            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, aleatorio);
+        }else if(lista.equals("Aviones en Vuelo")){
+            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 1);
+        }else if(lista.equals("Aviones en Hangar")){
+            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 4);
+        }else if(lista.equals("Pista de Despegue")){
+            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 3);
+        }else{
+            insertarlistasAleatorio(modelo, pasajeros, sobrecargos, piloto, 2);
+        }
     }
+    
     
 
 }

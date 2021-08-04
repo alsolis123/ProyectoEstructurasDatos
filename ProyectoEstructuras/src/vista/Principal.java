@@ -31,6 +31,8 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        btn_salir = new javax.swing.JButton();
+        btn_incluir = new javax.swing.JButton();
         btn_envuelo = new javax.swing.JButton();
         btn_hangar = new javax.swing.JButton();
         btn_despegue = new javax.swing.JButton();
@@ -40,6 +42,17 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_salir.setText("Salir");
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, -1));
+
+        btn_incluir.setText("+ Incluir Avion");
+        btn_incluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_incluirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, 60));
 
         btn_envuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_vuelo.png"))); // NOI18N
         btn_envuelo.setOpaque(false);
@@ -111,6 +124,10 @@ public class Principal extends javax.swing.JFrame {
         Main.mostrar_Aterrizar();
     }//GEN-LAST:event_btn_aterrizajeActionPerformed
 
+    private void btn_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_incluirActionPerformed
+        Main.mostrar_Incluir();
+    }//GEN-LAST:event_btn_incluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -151,6 +168,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_despegue;
     private javax.swing.JButton btn_envuelo;
     private javax.swing.JButton btn_hangar;
+    private javax.swing.JButton btn_incluir;
+    private javax.swing.JButton btn_salir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -7,6 +7,7 @@ import vista.Aterrizar;
 import vista.Configurar;
 import vista.Despegue;
 import vista.Hangar;
+import vista.Incluir;
 import vista.Inicio;
 import vista.Principal;
 import vista.Vuelo;
@@ -22,6 +23,7 @@ public class Main {
     public static Principal principal = new Principal();
     public static Vuelo vuelo = new Vuelo();
     public static Configurar configurar = new Configurar();
+    public static Incluir incluir = new Incluir();
     
     //Logica
     public static Aviones aviones = new Aviones();
@@ -62,8 +64,23 @@ public class Main {
         aviones.imprimirlista2();
     }
     
+//    Logica boton incluir principal
+    
+    public static void incluirAvion(){
+        aviones.incluirAvion(incluir.getFld_modelo(), Integer.parseInt(incluir.getFld_pasajeros()), Integer.parseInt(incluir.getFld_sobrecargos()), incluir.getFld_piloto(), incluir.getCbox_area());
+        actualizarTablas();
+    }
+    
+    
     
 //    Abrir y cerrar ventanas
+    
+    public static void mostrar_Incluir(){
+        incluir.setVisible(true);
+    }
+    public static void ocultar_Incluir(){
+        incluir.setVisible(false);
+    }
     
     public static void mostrar_Aterrizar(){
         aterrizar.setVisible(true);
