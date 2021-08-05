@@ -18,12 +18,6 @@ public class Configurar extends javax.swing.JFrame {
     public Configurar() {
      
         initComponents();
-        /*BG transparente*/
-        /*text_modelo.setBackground(new java.awt.Color(0,0,0,1));
-       text_pasajeros.setBackground(new java.awt.Color(0,0,0,1));
-       text_sobrecargo.setBackground(new java.awt.Color(0,0,0,1));
-       text_piloto.setBackground(new java.awt.Color(0,0,0,1));
-         */
         setBounds(800, 300, 473, 537);
         setResizable(false);
         this.setLocationRelativeTo(null);
@@ -64,7 +58,7 @@ public class Configurar extends javax.swing.JFrame {
         text_pasajeros.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_pasajeros.setBorder(null);
         text_pasajeros.setOpaque(false);
-        jPanel1.add(text_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 200, 30));
+        jPanel1.add(text_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 200, 30));
 
         text_sobrecargo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_sobrecargo.setBorder(null);
@@ -74,12 +68,12 @@ public class Configurar extends javax.swing.JFrame {
                 text_sobrecargoActionPerformed(evt);
             }
         });
-        jPanel1.add(text_sobrecargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 200, 30));
+        jPanel1.add(text_sobrecargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 200, 30));
 
         text_piloto.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         text_piloto.setBorder(null);
         text_piloto.setOpaque(false);
-        jPanel1.add(text_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 200, 30));
+        jPanel1.add(text_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 200, 30));
 
         btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_Agregar.png"))); // NOI18N
         btn_ingresar.setOpaque(false);
@@ -90,14 +84,13 @@ public class Configurar extends javax.swing.JFrame {
         });
         jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 110, 50));
 
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
         btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 130, 40));
+        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 40, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Configurar.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 480, 550));
@@ -123,6 +116,7 @@ public class Configurar extends javax.swing.JFrame {
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
         Main.mostrar_Inicio();
         Main.ocultar_Configurar();
+        
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed

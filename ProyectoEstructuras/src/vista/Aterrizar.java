@@ -20,6 +20,7 @@ public class Aterrizar extends javax.swing.JFrame {
      */
     public Aterrizar() {
         initComponents();
+        setResizable(false);
         this.setLocationRelativeTo(null);
     }
 

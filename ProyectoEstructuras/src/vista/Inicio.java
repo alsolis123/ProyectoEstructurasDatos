@@ -1,4 +1,3 @@
-
 package vista;
 
 import controlador.Main;
@@ -15,8 +14,10 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        setBounds(800, 300, 805, 485);
+        setResizable(false);
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -73,15 +74,15 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-        if (Main.contador_Inicio() >= 10){
+        if (Main.contador_Inicio() >= 10) {
             Main.mostrar_Principal();
             Main.ocultar_Inicio();
             Main.distribuirAviones();
             Main.actualizarTablas();
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Debe tener al menos 10 aviones ingresados");
         }
-            
+
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     private void btn_configurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configurarActionPerformed

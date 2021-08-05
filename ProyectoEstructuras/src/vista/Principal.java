@@ -18,6 +18,8 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setResizable(false);
+        setBounds(800, 300, 947, 535);
         this.setLocationRelativeTo(null);
     }
 
@@ -44,15 +46,15 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_salir.setText("Salir");
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, -1));
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, -1, -1));
 
-        btn_incluir.setText("+ Incluir Avion");
+        btn_incluir.setText("+ ");
         btn_incluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_incluirActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 150, 60));
+        jPanel1.add(btn_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 60, 50));
 
         btn_envuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_vuelo.png"))); // NOI18N
         btn_envuelo.setOpaque(false);
