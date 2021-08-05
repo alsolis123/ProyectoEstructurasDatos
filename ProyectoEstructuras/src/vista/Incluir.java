@@ -45,7 +45,7 @@ public class Incluir extends javax.swing.JFrame {
         btn_ingresar = new javax.swing.JButton();
         cbox_area = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Modelo");
 

@@ -39,7 +39,7 @@ public class Despegue extends javax.swing.JFrame {
         btn_vuelo = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
