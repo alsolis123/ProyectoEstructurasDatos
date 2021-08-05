@@ -49,6 +49,7 @@ public class Aviones {
                 listas[0] = nuevo;
                 
             }else{
+//                Se esta agregando al final de la lista principal
                 Nodo aux = listas[0];
 
                 while(aux.siguiente != null){
