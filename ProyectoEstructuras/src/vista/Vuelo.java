@@ -86,7 +86,7 @@ public class Vuelo extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(16, 16, 16)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
