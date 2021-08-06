@@ -85,7 +85,7 @@ public class Incluir extends javax.swing.JFrame {
                 btn_ingresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 140, 50));
+        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 120, 40));
 
         cbox_area.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
         cbox_area.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aleatorio", "Aviones en Vuelo", "Aviones en Hangar", "Pista de Despegue", "Pista de Aterrizaje" }));
