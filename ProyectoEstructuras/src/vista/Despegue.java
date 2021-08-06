@@ -21,6 +21,9 @@ public class Despegue extends javax.swing.JFrame {
     public Despegue() {
         initComponents();
         this.setLocationRelativeTo(null);
+        btn_atras.setOpaque(false);
+        btn_atras.setContentAreaFilled(false);
+        btn_atras.setBorderPainted(false);
     }
 
     /**
@@ -38,6 +41,7 @@ public class Despegue extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_vuelo = new javax.swing.JButton();
         btn_atras = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -53,46 +57,39 @@ public class Despegue extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_despegue);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 600, 210));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 600, 210));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PistaDespegue.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 560, 60));
 
-        btn_vuelo.setText("Despegar/En Vuelo");
+        btn_vuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegar_lista.png"))); // NOI18N
         btn_vuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_vueloActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+        jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 190, 40));
 
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
         btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
+        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 640, 520));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(btn_atras)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_atras)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -158,6 +155,7 @@ public class Despegue extends javax.swing.JFrame {
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_vuelo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_despegue;

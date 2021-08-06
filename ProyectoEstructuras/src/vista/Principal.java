@@ -21,6 +21,9 @@ public class Principal extends javax.swing.JFrame {
         setResizable(false);
         setBounds(800, 300, 947, 535);
         this.setLocationRelativeTo(null);
+        btn_incluir.setOpaque(false);
+        btn_incluir.setContentAreaFilled(false);
+        btn_incluir.setBorderPainted(false);
     }
 
     /**
@@ -45,10 +48,10 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btn_salir.setText("Salir");
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 40, -1, -1));
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_salir.png"))); // NOI18N
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 140, 40));
 
-        btn_incluir.setText("+ ");
+        btn_incluir.setBorder(null);
         btn_incluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_incluirActionPerformed(evt);

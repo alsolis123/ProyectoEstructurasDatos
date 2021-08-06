@@ -21,6 +21,9 @@ public class Hangar extends javax.swing.JFrame {
     public Hangar() {
         initComponents();
         this.setLocationRelativeTo(null);
+        btn_atras.setOpaque(false);
+        btn_atras.setContentAreaFilled(false);
+        btn_atras.setBorderPainted(false);
     }
 
     /**
@@ -36,8 +39,9 @@ public class Hangar extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_hangar = new javax.swing.JTable();
         btn_atras = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btn_despegue = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -53,41 +57,39 @@ public class Hangar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_hangar);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 600, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 600, 170));
 
-        btn_atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_atras.png"))); // NOI18N
         btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_atrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 60, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AvionesHangar.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 550, 60));
-
-        btn_despegue.setText("Pista de Despegue");
+        btn_despegue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegue_lista.png"))); // NOI18N
         btn_despegue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_despegueActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, -1, -1));
+        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 180, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AvionesHangar.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 550, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -152,6 +154,7 @@ public class Hangar extends javax.swing.JFrame {
     private javax.swing.JButton btn_atras;
     private javax.swing.JButton btn_despegue;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_hangar;

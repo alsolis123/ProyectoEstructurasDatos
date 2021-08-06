@@ -21,6 +21,9 @@ public class Configurar extends javax.swing.JFrame {
         setBounds(800, 300, 473, 537);
         setResizable(false);
         this.setLocationRelativeTo(null);
+        btn_atras.setOpaque(false);
+        btn_atras.setContentAreaFilled(false);
+        btn_atras.setBorderPainted(false);
     }
 
     /**
@@ -82,7 +85,7 @@ public class Configurar extends javax.swing.JFrame {
                 btn_ingresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, 110, 50));
+        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 110, 50));
 
         btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +96,7 @@ public class Configurar extends javax.swing.JFrame {
         jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 40, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Configurar.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 480, 550));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -57,7 +57,7 @@ public class Incluir extends javax.swing.JFrame {
         fld_modelo.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         fld_modelo.setBorder(null);
         fld_modelo.setOpaque(false);
-        jPanel1.add(fld_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 139, -1));
+        jPanel1.add(fld_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 139, -1));
 
         fld_sobrecargos.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         fld_sobrecargos.setBorder(null);
@@ -67,7 +67,7 @@ public class Incluir extends javax.swing.JFrame {
         fld_pasajeros.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         fld_pasajeros.setBorder(null);
         fld_pasajeros.setOpaque(false);
-        jPanel1.add(fld_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 139, -1));
+        jPanel1.add(fld_pasajeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 139, -1));
 
         fld_piloto.setFont(new java.awt.Font("Ebrima", 0, 18)); // NOI18N
         fld_piloto.setBorder(null);
@@ -77,15 +77,15 @@ public class Incluir extends javax.swing.JFrame {
                 fld_pilotoActionPerformed(evt);
             }
         });
-        jPanel1.add(fld_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 139, -1));
+        jPanel1.add(fld_piloto, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 139, -1));
 
-        btn_ingresar.setText("Ingresar");
+        btn_ingresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_Agregar2.png"))); // NOI18N
         btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ingresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+        jPanel1.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 140, 50));
 
         cbox_area.setFont(new java.awt.Font("Ebrima", 1, 18)); // NOI18N
         cbox_area.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aleatorio", "Aviones en Vuelo", "Aviones en Hangar", "Pista de Despegue", "Pista de Aterrizaje" }));
