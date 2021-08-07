@@ -21,6 +21,9 @@ public class Incluir extends javax.swing.JFrame {
     public Incluir() {
         initComponents();
         setResizable(false);
+        btn_atras.setOpaque(false);
+        btn_atras.setContentAreaFilled(false);
+        btn_atras.setBorderPainted(false);
         setBounds(800, 300, 473, 537);
     }
 

@@ -65,18 +65,19 @@ public class Hangar extends javax.swing.JFrame {
                 btn_atrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 60, 40));
+        jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 60, 40));
 
         btn_despegue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegue_lista.png"))); // NOI18N
+        btn_despegue.setBorder(null);
         btn_despegue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_despegueActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 400, 180, 40));
+        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, -1, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AvionesHangar.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 550, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 570, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 510));

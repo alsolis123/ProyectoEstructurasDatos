@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setResizable(false);
-        setBounds(800, 300, 947, 535);
+        setBounds(800, 300, 947, 540);
         this.setLocationRelativeTo(null);
         btn_incluir.setOpaque(false);
         btn_incluir.setContentAreaFilled(false);
@@ -45,11 +45,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_salir.png"))); // NOI18N
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 30, 140, 40));
+        btn_salir.setBorder(null);
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, -1, 40));
 
         btn_incluir.setBorder(null);
         btn_incluir.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
                 btn_incluirActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 60, 50));
+        jPanel1.add(btn_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 60, 50));
 
         btn_envuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_vuelo.png"))); // NOI18N
         btn_envuelo.setOpaque(false);
@@ -66,7 +73,7 @@ public class Principal extends javax.swing.JFrame {
                 btn_envueloActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_envuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 210, 60));
+        jPanel1.add(btn_envuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 210, 60));
 
         btn_hangar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_hangar.png"))); // NOI18N
         btn_hangar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -76,7 +83,7 @@ public class Principal extends javax.swing.JFrame {
                 btn_hangarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_hangar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 210, 60));
+        jPanel1.add(btn_hangar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 210, 60));
 
         btn_despegue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegue.png"))); // NOI18N
         btn_despegue.setOpaque(false);
@@ -85,7 +92,7 @@ public class Principal extends javax.swing.JFrame {
                 btn_despegueActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 210, 60));
+        jPanel1.add(btn_despegue, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 210, 60));
 
         btn_aterrizaje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_aterrizaje.png"))); // NOI18N
         btn_aterrizaje.setOpaque(false);
@@ -94,20 +101,20 @@ public class Principal extends javax.swing.JFrame {
                 btn_aterrizajeActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_aterrizaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 210, 60));
+        jPanel1.add(btn_aterrizaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 210, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Principal.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 540));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 941, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -132,6 +139,11 @@ public class Principal extends javax.swing.JFrame {
     private void btn_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_incluirActionPerformed
         Main.mostrar_Incluir();
     }//GEN-LAST:event_btn_incluirActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        /*Salir*/
+        System.exit(0);
+    }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
      * @param args the command line arguments

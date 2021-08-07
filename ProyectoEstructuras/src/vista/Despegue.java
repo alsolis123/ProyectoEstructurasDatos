@@ -57,18 +57,19 @@ public class Despegue extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_despegue);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 600, 210));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 600, 170));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/PistaDespegue.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 560, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 570, 70));
 
         btn_vuelo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_despegar_lista.png"))); // NOI18N
+        btn_vuelo.setBorder(null);
         btn_vuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_vueloActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 190, 40));
+        jPanel1.add(btn_vuelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 200, -1));
 
         btn_atras.setBorder(null);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {

@@ -65,15 +65,16 @@ public class Aterrizar extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbl_aterrizaje);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 623, 167));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 600, 170));
 
         btn_hangar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_hangar_lista.png"))); // NOI18N
+        btn_hangar.setBorder(null);
         btn_hangar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_hangarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_hangar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 132, 39));
+        getContentPane().add(btn_hangar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 380, 132, 39));
 
         btn_atras.setOpaque(false);
         btn_atras.addActionListener(new java.awt.event.ActionListener() {
@@ -81,13 +82,13 @@ public class Aterrizar extends javax.swing.JFrame {
                 btn_atrasActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 83, 38));
+        getContentPane().add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 50, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Aterrizaje.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 590, 70));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 550, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 480));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

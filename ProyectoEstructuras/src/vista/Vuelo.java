@@ -68,15 +68,16 @@ public class Vuelo extends javax.swing.JFrame {
         jPanel1.add(btn_atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 80, 40));
 
         btn_aterrizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/btn_aterrizar_lista.png"))); // NOI18N
+        btn_aterrizar.setBorder(null);
         btn_aterrizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_aterrizarActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_aterrizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 130, 40));
+        jPanel1.add(btn_aterrizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 130, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/AvionesVuelo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 540, 70));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 570, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 640, 530));
