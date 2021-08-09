@@ -19,7 +19,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setResizable(false);
-        setBounds(800, 300, 947, 540);
+        setBounds(800, 300, 910, 560);
         this.setLocationRelativeTo(null);
         btn_incluir.setOpaque(false);
         btn_incluir.setContentAreaFilled(false);
@@ -56,7 +56,7 @@ public class Principal extends javax.swing.JFrame {
                 btn_salirActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 40, -1, 40));
+        jPanel1.add(btn_salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, -1, 40));
 
         btn_incluir.setBorder(null);
         btn_incluir.addActionListener(new java.awt.event.ActionListener() {
@@ -104,13 +104,13 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(btn_aterrizaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 210, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Principal.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 560));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
