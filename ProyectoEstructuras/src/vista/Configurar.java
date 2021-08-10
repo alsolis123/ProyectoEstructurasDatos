@@ -117,13 +117,23 @@ public class Configurar extends javax.swing.JFrame {
     }//GEN-LAST:event_text_modeloActionPerformed
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
+        
         Main.mostrar_Inicio();
         Main.ocultar_Configurar();
+        text_piloto.setText("");
+        text_modelo.setText("");
+        text_pasajeros.setText("");
+        text_sobrecargo.setText("");
         
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
-        Main.configurar_Inicio();    
+        try{
+            Main.configurar_Inicio();
+            text_piloto.setText("");
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Debe ingresar los valores correctos");
+        }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 
     private void text_sobrecargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_sobrecargoActionPerformed
@@ -169,32 +179,32 @@ public class Configurar extends javax.swing.JFrame {
         return text_modelo.getText();
     }
 
-    public void setText_modelo(JTextField text_modelo) {
-        this.text_modelo = text_modelo;
+    public void setText_modelo(String text_modelo) {
+        this.text_modelo.setText(text_modelo);
     }
 
     public String getText_pasajeros() {
         return text_pasajeros.getText();
     }
 
-    public void setText_pasajeros(JTextField text_pasajeros) {
-        this.text_pasajeros = text_pasajeros;
+    public void setText_pasajeros(String text_pasajeros) {
+        this.text_pasajeros.setText(text_pasajeros);
     }
 
     public String getText_piloto() {
         return text_piloto.getText();
     }
 
-    public void setText_piloto(JTextField text_piloto) {
-        this.text_piloto = text_piloto;
+    public void setText_piloto(String text_piloto) {
+        this.text_piloto.setText(text_piloto);
     }
 
     public String getText_sobrecargo() {
         return text_sobrecargo.getText();
     }
 
-    public void setText_sobrecargo(JTextField text_sobrecargo) {
-        this.text_sobrecargo = text_sobrecargo;
+    public void setText_sobrecargo(String text_sobrecargo) {
+        this.text_sobrecargo.setText(text_sobrecargo);
     }
     
     

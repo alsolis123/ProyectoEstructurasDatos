@@ -7,6 +7,7 @@ package vista;
 
 import controlador.Main;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -117,11 +118,22 @@ public class Incluir extends javax.swing.JFrame {
     }//GEN-LAST:event_fld_pilotoActionPerformed
 
     private void btn_atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_atrasActionPerformed
-        Main.ocultar_Incluir();
+        
+            Main.ocultar_Incluir();
+            fld_modelo.setText("");
+            fld_pasajeros.setText("");
+            fld_sobrecargos.setText("");
+            fld_piloto.setText("");
+        
     }//GEN-LAST:event_btn_atrasActionPerformed
 
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
-        Main.incluirAvion();
+        try{
+            Main.incluirAvion();
+            fld_piloto.setText("");
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Debe ingresar los valores correctos"); 
+        }
     }//GEN-LAST:event_btn_ingresarActionPerformed
 
     /**
